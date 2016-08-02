@@ -7,8 +7,6 @@ GEM
     excon (0.45.4)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
-    haml (4.0.5)
-      tilt
     json (1.8.0)
     multipart-post (2.0.0)
     rack (1.5.2)
@@ -25,6 +23,5 @@ PLATFORMS
 
 DEPENDENCIES
   alchemy-api-rb
-  haml
   json
   sinatra
