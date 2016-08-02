@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'haml' # template engine
 require 'json'
-require 'twilio-ruby'
 require 'alchemy_api'
 
 def vcap_services
@@ -30,16 +29,6 @@ post '/messages' do
   </Response>
   "
 end
-
-get '/messages' do
-  credentials = vcap_services['user-provided'].first['credentials']
-  client = Twilio::REST::Client.new credentials['accountSID'], credentials['authToken']
-  messages = client.messages.list :to => '+447903596047'
-  return messages.map { |msg| "<p>#{msg.body}</p>" }.join
-end
-
-
-
 
 # control part of MVC
 # an HTTP method paired with a URL-matching pattern
